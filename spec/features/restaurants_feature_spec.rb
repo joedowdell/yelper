@@ -43,7 +43,7 @@ describe 'restaurants' do
 
 		it 'prompts the user to fill out a form, then display edited restaurant' do
 			visit '/restaurants'
-			click_link 'Edit Chipotle'
+			click_link 'Edit Chilpotle'
 
 			fill_in 'Name', with: 'Chipotle'
 			click_button 'Update Restaurant'
@@ -56,6 +56,9 @@ describe 'restaurants' do
 	end
 
 	context 'delete restaurant' do
+		before(:each) do
+      Restaurant.create(name: 'Chipotle')
+    end
 
 		it 'removes restaurant when a user clicks a delete link' do
 			visit '/restaurants'

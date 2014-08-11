@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
   	redirect_to '/restaurants'
   end
 
-  def destory
+  def destroy
   	@restaurant = Restaurant.find(params[:id])
   	@restaurant.destroy
 
