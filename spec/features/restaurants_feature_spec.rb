@@ -10,17 +10,14 @@ describe 'restaurants' do
     end
   end
 
-	context 'restaurants have been added' do
-		
+	context 'have been added' do
 		before(:each) do
 			Restaurant.create(name: 'Nandos') 
 		end
-
 		it 'should display them' do
 			visit '/restaurants'
 			expect(page).to have_content 'Nandos'
 		end
-
 	end
-  
+
 end
