@@ -21,20 +21,7 @@ describe 'restaurants' do
 		end
 	end
 
-	context 'creating restaurants' do
-		
-		it 'prompts the user to fill out a form, then display new restaurant' do
-			visit '/restaurants'
-			click_link 'Add a restaurant'
 
-			fill_in 'Name', with: 'Chipotle'
-			click_button 'Create Restaurant'
-
-			expect(page).to have_content 'Chipotle'
-			expect(current_path).to eq restaurants_path
-		end
-
-	end
 
 	context 'edit restaurants' do
 		before(:each) do
@@ -55,7 +42,7 @@ describe 'restaurants' do
 
 	end
 
-	context 'delete restaurant' do
+	context 'deleting restaurant' do
 		before(:each) do
       Restaurant.create(name: 'Chipotle')
     end
@@ -69,9 +56,6 @@ describe 'restaurants' do
 		end
 
 	end
-
-
-
 
 end
 
