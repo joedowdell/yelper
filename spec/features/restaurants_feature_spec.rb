@@ -31,7 +31,7 @@ describe 'restaurants' do
 			click_button 'Create Restaurant'
 
 			expect(page).to have_content 'Chipotle'
-			expect(current_path).to eq '/restaurants'
+			expect(current_path).to eq restaurants_path
 		end
 
 	end
@@ -49,7 +49,7 @@ describe 'restaurants' do
 			click_button 'Update Restaurant'
 
 			expect(page).to have_content 'Chipotle'
-			expect(current_path).to eq '/restaurants'
+			expect(current_path).to eq restaurants_path
 
 		end
 
