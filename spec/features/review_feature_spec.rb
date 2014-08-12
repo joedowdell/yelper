@@ -6,7 +6,7 @@ describe 'reviewing restaurants' do
 			Restaurant.create(name: 'Nandos') 
 		end
 		
-	it 'allows users to leave reviews using a form, which appears alongside' do
+	it 'allows users to leave reviews using a form, which appear alongside restaurants' do
 		visit '/restaurants'
 		click_link 'Review Nandos'
 		fill_in 'Thoughts', with: 'Alright!'
