@@ -27,9 +27,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',										group: :development
 
 group :development, :test do
-	gem 'rspec-rails'
-	gem 'rspec-collection_matchers'
-	gem 'capybara'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 

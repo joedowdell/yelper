@@ -9,7 +9,15 @@
     	<ul>
     		<% restaurant.reviews.each do |review| %>
     			<li>
-            <%= "#{review.thoughts} (#{star_rating(review.rating)})" %>
+            <%= "#{review.thoughts} (#{star_rating(review.rating)})" %> -
+            <em>Posted <%= time_ago_in_words(review.created_at) %> ago</em>
+
+          <span class='endorsement_count'>
+            <%= review.endorsements.count %>
+          </span> endorsements
+
+          <%= link_to 'Endorsement this review', review_endorsement_path(review), class: 'endorsement-link' %>
+            
           </li>
     		<% end %>
     	</ul>
