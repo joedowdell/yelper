@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe 'reviewing restaurants' do
 
 	before(:each) do
@@ -14,8 +15,16 @@ describe 'reviewing restaurants' do
 		click_button 'Leave review'
 
 		expect(current_path).to eq restaurants_path
-		expect(page).to have_content 'Alright! (3)'
+		expect(page).to have_content 'Alright! (★★★☆☆)'
 	
+	end
+
+	it 'display the average rating from all reviews' do
+
+		leave_review('So so', 3)
+		leave_review('Great', 5)
+
+		expect(page).to have_content 'Average rating: ★★★★☆'
 	end
 
 end
