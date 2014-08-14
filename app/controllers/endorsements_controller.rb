@@ -4,7 +4,7 @@ class EndorsementsController < ApplicationController
 		@review = Review.find(params[:review_id])
 		@review.endorsements.create
 
-		render json: { new_endorsements.count }
+		render json: { new_endorsements_count: @review.endorsements.count }
 	end
 
 end
