@@ -25,7 +25,9 @@ describe 'restaurants' do
 
 	context 'edit restaurants' do
 		before(:each) do
-			Restaurant.create(name: 'Chilpotle') 
+			Restaurant.create(name: 'Chilpotle')
+			joe = User.create(email: "a@a.com", password: "12345678", password_confirmation: "12345678")
+      login_as joe 
 		end
 
 		it 'prompts the user to fill out a form, then display edited restaurant' do
@@ -45,6 +47,8 @@ describe 'restaurants' do
 	context 'deleting restaurant' do
 		before(:each) do
       Restaurant.create(name: 'Chipotle')
+      joe = User.create(email: "a@a.com", password: "12345678", password_confirmation: "12345678")
+      login_as joe
     end
 
 		it 'removes restaurant when a user clicks a delete link' do
